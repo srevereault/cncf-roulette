@@ -11,7 +11,7 @@ with open("cncf.csv", newline="") as file:
 
 @app.route('/')
 def index():
-    alea = random.randint(1,761)
+    alea = random.randint(1,len(rows))
     roulette = {'name':rows[alea][0], 'logo':rows[alea][3], 'site':rows[alea][2]}
     return render_template("index.html",roulette=roulette)
 
